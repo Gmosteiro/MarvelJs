@@ -10,7 +10,7 @@ const marvel = {
         .then (res => res.json())
         .then((json) => {
             for(const pj of json.data.results){
-                //console.log(json, 'RES.JSON')
+                console.log(json, 'RES.JSON')
                 let urlpj = pj.urls[0].url;
                 contentHTML += `
                     <div class="col-md-4">
@@ -18,6 +18,7 @@ const marvel = {
                             <img src="${pj.thumbnail.path}.${pj.thumbnail.extension}" alt="${pj.name}" class="img-thumbnail">
                         </a>
                         <h3 class="title">${pj.name}</h3>
+                        <h5 class="desc">${pj.description}</h3>
                     </div>`
             }
             container.innerHTML=contentHTML;
